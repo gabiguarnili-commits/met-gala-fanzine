@@ -1,0 +1,122 @@
+/* ===== VARIABLES ===== */
+:root {
+  --negro: #111;
+  --blanco: #f7f4ee;
+  --rojo: #d7263d;
+  --fuente-titulo: 'Impact', 'Arial Black', sans-serif;
+  --fuente-texto: Georgia, serif;
+}
+
+/* ===== RESET BÁSICO ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--blanco);
+  color: var(--negro);
+  font-family: var(--fuente-texto);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--rojo);
+}
+
+/* ===== MENÚ ===== */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: var(--negro);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.menu__logo {
+  color: var(--blanco);
+  font-family: var(--fuente-titulo);
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.menu__links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.menu__links a {
+  color: var(--blanco);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.menu__links a:hover {
+  color: var(--rojo);
+}
+
+/* ===== PORTADA ===== */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--rojo);
+  color: var(--blanco);
+  padding: 2rem;
+}
+
+.hero__etiqueta {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.9rem;
+}
+
+.hero__titulo {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(5rem, 20vw, 14rem);
+  line-height: 0.85;
+  margin: 1rem 0;
+}
+
+.hero__subtitulo {
+  font-style: italic;
+  font-size: 1.3rem;
+}
+
+/* ===== CONTENIDO ===== */
+.contenido {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.bloque h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.bloque p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* ===== PIE ===== */
+.pie {
+  text-align: center;
+  padding: 2rem;
+  background: var(--negro);
+  color: var(--blanco);
+}
