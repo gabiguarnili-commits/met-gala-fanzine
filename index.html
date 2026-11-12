@@ -6,9 +6,8 @@
   <title>Met Gala Fanzine</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="pagina-portada">
+<body class="alfombra">
 
-  <!-- MENÚ -->
   <nav class="menu">
     <a href="index.html" class="menu__logo">MET GALA ZINE</a>
     <ul class="menu__links">
@@ -20,36 +19,59 @@
     </ul>
   </nav>
 
-  <!-- PORTADA -->
-  <header class="hero">
-    <p class="hero__etiqueta">Fanzine · Edición Nº 1</p>
-    <h1 class="hero__titulo">MET<br>GALA</h1>
-    <p class="hero__subtitulo">Cuando la moda se convierte en arte</p>
-  </header>
+  <div class="flash" id="flash"></div>
+  <p class="pista-ayuda">Haz scroll para caminar · Haz clic para tomar fotos</p>
 
-  <!-- QUÉ ES -->
-  <main class="contenido">
-    <section class="bloque">
-      <h2>¿Qué es la Met Gala?</h2>
-      <p>
-        Es una gala benéfica anual que organiza el Costume Institute del
-        Metropolitan Museum of Art de Nueva York. Cada año tiene un tema
-        distinto, con una exposición y un código de vestimenta que los
-        invitados interpretan a su manera.
-      </p>
-      <p>
-        En este fanzine recorremos tres galas muy diferentes entre sí:
-        <a href="heavenly-bodies.html">lo sagrado</a>,
-        <a href="camp.html">lo exagerado</a> y
-        <a href="costume-art.html">lo artístico</a>.
-      </p>
-    </section>
-  </main>
+  <section class="recorrido" id="recorrido">
+    <div class="pista" id="pista">
 
-  <footer class="pie">
-    <p>Hecho para Taller Multimedia · Met Gala Fanzine</p>
-  </footer>
+      <article class="escena escena--entrada">
+        <p class="etiqueta">Fanzine · Edición Nº 1</p>
+        <h1 class="titulo-gigante">MET<br>GALA</h1>
+        <p class="subtitulo">Pisa la alfombra roja →</p>
+      </article>
 
+      <article class="escena">
+        <div class="cartel">
+          <h2>¿Qué es la Met Gala?</h2>
+          <p>
+            Una gala benéfica anual del Costume Institute del Metropolitan
+            Museum of Art de Nueva York. Cada año hay un tema, una exposición
+            y un código de vestimenta que los invitados interpretan a su manera.
+          </p>
+        </div>
+      </article>
+
+      <article class="escena">
+        <div class="cartel cartel--flash">
+          <h2>¡Sonríe!</h2>
+          <p>Los fotógrafos te esperan. Haz clic en cualquier parte.</p>
+        </div>
+      </article>
+
+      <article class="escena escena--puertas">
+        <h2 class="titulo-puertas">Elige tu sala</h2>
+        <div class="puertas">
+          <a href="heavenly-bodies.html" class="puerta">
+            <span class="puerta__anio">2018</span>
+            <span class="puerta__nombre">Heavenly Bodies</span>
+          </a>
+          <a href="camp.html" class="puerta">
+            <span class="puerta__anio">2019</span>
+            <span class="puerta__nombre">Camp</span>
+          </a>
+          <a href="costume-art.html" class="puerta">
+            <span class="puerta__anio">2026</span>
+            <span class="puerta__nombre">Costume Art</span>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
