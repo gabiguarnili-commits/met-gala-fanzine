@@ -1,0 +1,165 @@
+/* ===== SALAS (base compartida) ===== */
+.sala {
+  background: var(--fondo);
+  color: var(--texto);
+  overflow-x: hidden;
+}
+
+.sala .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.sala .recorrido {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sala .pista {
+  display: flex;
+  height: 100vh;
+  width: max-content;
+}
+
+.sala .escena {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 2rem 3rem;
+}
+
+.sala .etiqueta {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.9rem;
+  color: var(--acento);
+}
+
+.titulo-sala {
+  font-family: var(--fuente-sala);
+  font-size: clamp(3.5rem, 13vw, 10rem);
+  line-height: 0.95;
+  margin: 1rem 0;
+  color: var(--acento);
+}
+
+.titulo-sala--chico {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+}
+
+.sala .subtitulo {
+  font-style: italic;
+  font-size: 1.3rem;
+}
+
+.texto-sala {
+  max-width: 520px;
+  padding: 2rem;
+  border: 2px solid var(--acento);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.texto-sala h2 {
+  font-family: var(--fuente-sala);
+  font-size: 2.2rem;
+  color: var(--acento);
+  margin-bottom: 1rem;
+}
+
+.texto-sala p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.texto-sala a {
+  color: var(--acento);
+}
+
+/* Cuadros con marco de museo */
+.cuadro {
+  background: #1a1208;
+  padding: 14px;
+  border: 8px solid var(--acento);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  max-width: 90vw;
+  max-height: 80vh;
+}
+
+.cuadro img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  background: #2a2a2a;
+}
+
+.cuadro--vertical { width: min(320px, 80vw); }
+.cuadro--vertical img { aspect-ratio: 3 / 4; }
+
+.cuadro--horizontal { width: min(560px, 85vw); }
+.cuadro--horizontal img { aspect-ratio: 4 / 3; }
+
+.cuadro figcaption {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.8rem;
+  font-size: 0.85rem;
+  text-align: left;
+  color: var(--texto);
+}
+
+.cuadro figcaption strong {
+  font-family: var(--fuente-sala);
+  color: var(--acento);
+  letter-spacing: 1px;
+}
+
+/* Final de la sala */
+.puerta-sala {
+  display: inline-block;
+  margin: 1.5rem 0 1rem;
+  padding: 1rem 2rem;
+  border: 3px solid var(--acento);
+  border-radius: 80px 80px 0 0;
+  color: var(--texto);
+  text-decoration: none;
+  font-family: var(--fuente-sala);
+  letter-spacing: 2px;
+  transition: background 0.3s;
+}
+
+.puerta-sala:hover {
+  background: var(--acento);
+  color: #000;
+}
+
+.enlace-volver {
+  color: var(--texto);
+  font-size: 0.9rem;
+}
+
+.sala .pista-ayuda {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--texto);
+}
+
+/* ===== TEMA: HEAVENLY BODIES 2018 ===== */
+.sala--2018 {
+  --fondo: radial-gradient(circle at 50% 30%, #1d2a5c 0%, #0a0f26 70%);
+  --texto: #f3ead2;
+  --acento: #d4af37;
+  --fuente-sala: 'UnifrakturCook', 'Cinzel', serif;
+}
