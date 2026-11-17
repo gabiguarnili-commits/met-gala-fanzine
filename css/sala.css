@@ -163,3 +163,21 @@
   --acento: #d4af37;
   --fuente-sala: 'UnifrakturCook', 'Cinzel', serif;
 }
+/* ===== TEMA: CAMP 2019 ===== */
+.sala--2019 {
+  --fondo: linear-gradient(135deg, #2b0a3d 0%, #ff2e93 100%);
+  --texto: #fff7fb;
+  --acento: #fff200;
+  --fuente-sala: 'Bungee', 'Impact', sans-serif;
+}
+
+.sala--2019 .cuadro {
+  background: #00e5ff;
+  transform: rotate(-2deg);
+}
+
+.sala--2019 .texto-sala {
+  background: rgba(43, 10, 61, 0.7);
+  border-style: dashed;
+  border-width: 4px;
+}
