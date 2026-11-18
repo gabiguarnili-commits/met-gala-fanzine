@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi look · Met Gala Fanzine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body class="quiz-pagina">
+
+  <nav class="menu">
+    <a href="index.html" class="menu__logo">Met Gala Zine</a>
+    <ul class="menu__links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="heavenly-bodies.html">2018</a></li>
+      <li><a href="camp.html">2019</a></li>
+      <li><a href="costume-art.html">2026</a></li>
+      <li><a href="mi-look.html">Mi look</a></li>
+    </ul>
+  </nav>
+
+  <div class="flash" id="flash" aria-hidden="true"></div>
+  <div class="confeti" id="confeti" aria-hidden="true"></div>
+
+  <main class="quiz">
+    <p class="quiz__etiqueta" id="etiqueta">La fiesta final</p>
+    <h1 class="quiz__titulo" id="titulo">¿Qué look llevarías a la Met Gala?</h1>
+
+    <div class="quiz__barra" aria-hidden="true"><span id="barra"></span></div>
+
+    <section class="quiz__caja" id="caja">
+      <p class="quiz__intro">Responde 5 preguntas y descubre a qué sala perteneces.</p>
+      <button class="boton" id="empezar" type="button">Entrar a la fiesta</button>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
