@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Costume Art (2026) · Met Gala Fanzine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,700;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sala.css">
+</head>
+<body class="sala sala--2026">
+
+  <nav class="menu">
+    <a href="index.html" class="menu__logo">Met Gala Zine</a>
+    <ul class="menu__links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="heavenly-bodies.html">2018</a></li>
+      <li><a href="camp.html">2019</a></li>
+      <li><a href="costume-art.html">2026</a></li>
+      <li><a href="mi-look.html">Mi look</a></li>
+    </ul>
+  </nav>
+
+  <div class="progreso" aria-hidden="true"></div>
+  <div class="adornos" aria-hidden="true"></div>
+  <div class="flash" aria-hidden="true"></div>
+  <p class="pista-ayuda">Haz scroll para recorrer la sala · Haz clic en un cuadro para fotografiarlo</p>
+
+  <section class="recorrido" id="recorrido">
+    <div class="pista" id="pista">
+
+      <article class="escena escena--titulo" data-anio="2026">
+        <p class="etiqueta">Sala 3 · 2026</p>
+        <h1 class="titulo-sala" data-split>Costume<br>Art</h1>
+        <p class="subtitulo">Fashion is Art</p>
+        <span class="pegatina">Arte</span>
+      </article>
+
+      <article class="escena">
+        <div class="texto-sala">
+          <h2>El tema</h2>
+          <p>La exposición del Costume Institute pone la moda a dialogar con el arte: el cuerpo vestido como obra. El código de vestimenta de esta edición fue «Fashion is Art».</p>
+        </div>
+      </article>
+
+      <article class="escena">
+        <figure class="cuadro cuadro--vertical">
+          <div class="foto"><img src="assets/2026/look1.jpg" alt="Look 1 de la gala" onerror="this.style.display='none'"></div>
+          <figcaption>
+            <strong>Sabrina Carpenter</strong>
+            <span>Dior, diseñado por Jonathan Anderson.</span>
+          </figcaption>
+        </figure>
+      </article>
+
+      <article class="escena">
+        <figure class="cuadro cuadro--vertical">
+          <div class="foto"><img src="assets/2026/look2.jpg" alt="Look 2 de la gala" onerror="this.style.display='none'"></div>
+          <figcaption>
+            <strong>Emma Chamberlain</strong>
+            <span>Mugler, inspirado en La noche estrellada de Vincent van Gogh.</span>
+          </figcaption>
+        </figure>
+      </article>
+
+      <article class="escena">
+        <div class="texto-sala">
+          <h2>Dato curioso</h2>
+          <p>La exposición de 2026 inauguró unas nuevas galerías de casi 12.000 pies cuadrados, combinando prendas de vestir con obras de arte para mostrar la relación entre la moda y el cuerpo.</p>
+          <a href="https://www.metmuseum.org" target="_blank" rel="noopener">Ver fuente</a>
+        </div>
+      </article>
+
+      <article class="escena">
+        <figure class="cuadro cuadro--vertical">
+          <div class="foto"><img src="assets/2026/look3.jpg" alt="Look 3 de la gala" onerror="this.style.display='none'"></div>
+          <figcaption>
+            <strong>Jordan Roth</strong>
+            <span>Robert WunLa pintura Pygmalion and Galatea, de Jean-Léon Gérôme, que representa una escultura que cobra vida..</span>
+          </figcaption>
+        </figure>
+      </article>
+
+      <article class="escena">
+        <figure class="cuadro cuadro--vertical">
+          <div class="foto"><img src="assets/2026/look4.jpg" alt="Look 4 de la gala" onerror="this.style.display='none'"></div>
+          <figcaption>
+            <strong>Anok Yai</strong>
+            <span>Pierpaolo Piccioli, director creativo de Balenciaga.</span>
+          </figcaption>
+        </figure>
+      </article>
+
+      <article class="escena">
+        <h2 class="titulo-sala titulo-sala--chico">Siguiente sala</h2>
+        <a href="mi-look.html" class="puerta-sala">Descubre tu look</a>
+        <a href="camp.html" class="enlace-volver">← Sala anterior</a>
+      </article>
+
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/sala.js"></script>
+</body>
+</html>
