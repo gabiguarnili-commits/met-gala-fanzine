@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Met Gala Fanzine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="alfombra">
 
   <nav class="menu">
-    <a href="index.html" class="menu__logo">MET GALA ZINE</a>
+    <a href="index.html" class="menu__logo">Met Gala Zine</a>
     <ul class="menu__links">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="heavenly-bodies.html">2018</a></li>
@@ -19,20 +22,28 @@
     </ul>
   </nav>
 
-  <div class="flash" id="flash"></div>
-  <p class="pista-ayuda">Haz scroll para caminar · Haz clic para tomar fotos</p>
+  <div class="reflectores" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="luz-cursor" id="luz" aria-hidden="true"></div>
+  <div class="chispas" id="chispas" aria-hidden="true"></div>
+  <div class="flash" id="flash" aria-hidden="true"></div>
+
+  <p class="hud">Haz scroll para caminar · Haz clic para posar · Fotos: <span id="contador">0</span></p>
 
   <section class="recorrido" id="recorrido">
     <div class="pista" id="pista">
 
       <article class="escena escena--entrada">
-        <p class="etiqueta">Fanzine · Edición Nº 1</p>
-        <h1 class="titulo-gigante">MET<br>GALA</h1>
-        <p class="subtitulo">Pisa la alfombra roja →</p>
+        <p class="etiqueta">Fanzine, edición Nº 1</p>
+        <h1 class="titulo-gigante" id="titulo">
+          <span class="linea">Met</span>
+          <span class="linea linea--oro">Gala</span>
+        </h1>
+        <p class="subtitulo">Cuando la moda se convierte en arte. Pisa la alfombra.</p>
       </article>
 
       <article class="escena">
-        <div class="cartel">
+        <div class="revista">
+          <span class="pegatina pegatina--revista">Nº 1</span>
           <h2>¿Qué es la Met Gala?</h2>
           <p>
             Una gala benéfica anual del Costume Institute del Metropolitan
@@ -43,24 +54,26 @@
       </article>
 
       <article class="escena">
-        <div class="cartel cartel--flash">
-          <h2>¡Sonríe!</h2>
-          <p>Los fotógrafos te esperan. Haz clic en cualquier parte.</p>
-        </div>
+        <figure class="polaroid">
+          <div class="polaroid__foto">
+            <img src="assets/gif/flash.gif" alt="Fotógrafos en la alfombra roja" onerror="this.style.display='none'">
+          </div>
+          <figcaption>¡Sonríe! Haz clic donde quieras.</figcaption>
+        </figure>
       </article>
 
       <article class="escena escena--puertas">
         <h2 class="titulo-puertas">Elige tu sala</h2>
         <div class="puertas">
-          <a href="heavenly-bodies.html" class="puerta">
+          <a href="heavenly-bodies.html" class="puerta puerta--2018">
             <span class="puerta__anio">2018</span>
             <span class="puerta__nombre">Heavenly Bodies</span>
           </a>
-          <a href="camp.html" class="puerta">
+          <a href="camp.html" class="puerta puerta--2019">
             <span class="puerta__anio">2019</span>
             <span class="puerta__nombre">Camp</span>
           </a>
-          <a href="costume-art.html" class="puerta">
+          <a href="costume-art.html" class="puerta puerta--2026">
             <span class="puerta__anio">2026</span>
             <span class="puerta__nombre">Costume Art</span>
           </a>
