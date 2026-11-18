@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camp (2019) · Met Gala Fanzine</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/sala.css">
 </head>
 <body class="sala sala--2019">
 
   <nav class="menu">
-    <a href="index.html" class="menu__logo">MET GALA ZINE</a>
+    <a href="index.html" class="menu__logo">Met Gala Zine</a>
     <ul class="menu__links">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="heavenly-bodies.html">2018</a></li>
@@ -22,44 +23,44 @@
     </ul>
   </nav>
 
-  <p class="pista-ayuda">Haz scroll para recorrer la sala →</p>
+  <div class="progreso" aria-hidden="true"></div>
+  <div class="adornos" aria-hidden="true"></div>
+  <div class="flash" aria-hidden="true"></div>
+  <p class="pista-ayuda">Haz scroll para recorrer la sala · Haz clic en un cuadro para fotografiarlo</p>
 
   <section class="recorrido" id="recorrido">
     <div class="pista" id="pista">
 
-      <article class="escena">
+      <article class="escena escena--titulo" data-anio="2019">
         <p class="etiqueta">Sala 2 · 2019</p>
-        <h1 class="titulo-sala">CAMP!</h1>
+        <h1 class="titulo-sala" data-split>CAMP!</h1>
         <p class="subtitulo">Notas sobre la moda</p>
+        <span class="pegatina">¡Más es más!</span>
       </article>
 
       <article class="escena">
         <div class="texto-sala">
           <h2>El tema</h2>
-          <p>
-            La exposición se inspiró en el ensayo "Notes on Camp" de Susan
-            Sontag: lo exagerado, lo irónico y lo teatral convertido en
-            estética. Aquí, más es más.
-          </p>
+          <p>La exposición se inspiró en el ensayo «Notes on Camp» de Susan Sontag: lo exagerado, lo irónico y lo teatral convertido en estética. Aquí, más es más.</p>
         </div>
       </article>
 
       <article class="escena">
         <figure class="cuadro cuadro--vertical">
-          <img src="assets/2019/20191.jpg" alt="Look 1 de la Met Gala 2019">
+          <div class="foto"><img src="assets/2019/20191.jpg" alt="Look 1 de la gala" onerror="this.style.display='none'"></div>
           <figcaption>
-            <strong>NOMBRE</strong>
-            <span>DISEÑADOR · Foto: autor, licencia</span>
+            <strong>Kylie  y Kendall Jenner</strong>
+            <span>Atelier Versace, diseñado por Donatella Versace.</span>
           </figcaption>
         </figure>
       </article>
 
       <article class="escena">
         <figure class="cuadro cuadro--cuadrado">
-          <img src="assets/2019/20192.jpg" alt="Look 2 de la Met Gala 2019">
+          <div class="foto"><img src="assets/2019/20192.jpg" alt="Look 2 de la gala" onerror="this.style.display='none'"></div>
           <figcaption>
-            <strong>NOMBRE</strong>
-            <span>DISEÑADOR · Foto: autor, licencia</span>
+            <strong>Lady Gaga</strong>
+            <span>Brandon Maxwell.</span>
           </figcaption>
         </figure>
       </article>
@@ -67,37 +68,34 @@
       <article class="escena">
         <div class="texto-sala">
           <h2>Dato curioso</h2>
-          <p>
-            Escribe aquí un dato de esta gala con tus palabras y verifícalo
-            en la página del Met.
-          </p>
-          <a href="https://www.metmuseum.org" target="_blank" rel="noopener">Ver fuente →</a>
+          <p>En la exposición de 2019 se incluyó una pintura del rey Luis XIV, quien era considerado un referente del estilo Camp por sus poses exageradas y teatrales. ¡Incluso la realeza francesa fue parte de la inspiración de esta temática!</p>
+          <a href="https://www.metmuseum.org" target="_blank" rel="noopener">Ver fuente</a>
         </div>
       </article>
 
       <article class="escena">
         <figure class="cuadro cuadro--vertical">
-          <img src="assets/2019/20193.jpeg" alt="Look 3 de la Met Gala 2019">
+          <div class="foto"><img src="assets/2019/20193.jpg" alt="Look 3 de la gala" onerror="this.style.display='none'"></div>
           <figcaption>
-            <strong>NOMBRE</strong>
-            <span>DISEÑADOR · Foto: autor, licencia</span>
+            <strong>Katy Perry</strong>
+            <span>Moschino, diseñado por Jeremy Scott.</span>
           </figcaption>
         </figure>
       </article>
 
       <article class="escena">
         <figure class="cuadro cuadro--vertical">
-          <img src="assets/2019/20194.jpg" alt="Look 4 de la Met Gala 2019">
+          <div class="foto"><img src="assets/2019/20194.jpg" alt="Look 4 de la gala" onerror="this.style.display='none'"></div>
           <figcaption>
-            <strong>NOMBRE</strong>
-            <span>DISEÑADOR · Foto: autor, licencia</span>
+            <strong>Cardi B</strong>
+            <span>Thom Browne.</span>
           </figcaption>
         </figure>
       </article>
 
       <article class="escena">
         <h2 class="titulo-sala titulo-sala--chico">Siguiente sala</h2>
-        <a href="costume-art.html" class="puerta-sala">2026 · Costume Art →</a>
+        <a href="costume-art.html" class="puerta-sala">2026 · Costume Art</a>
         <a href="heavenly-bodies.html" class="enlace-volver">← Sala anterior</a>
       </article>
 
