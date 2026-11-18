@@ -1,28 +1,39 @@
 /* ===== SALAS (base compartida) ===== */
 .sala {
   background: var(--fondo);
+  background-attachment: fixed;
   color: var(--texto);
+  font-family: var(--fuente-texto);
   overflow-x: hidden;
 }
 
-.sala .menu {
+.progreso {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: var(--acento);
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 60;
 }
 
-.sala .recorrido {
-  height: 100vh;
+/* Capa de adornos flotantes (el glifo cambia con cada tema) */
+.adornos {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
   overflow: hidden;
 }
-
-.sala .pista {
-  display: flex;
-  height: 100vh;
-  width: max-content;
+.adorno {
+  position: absolute;
+  color: var(--acento);
+  line-height: 1;
 }
+.adorno::before { content: var(--glifo); }
+
+.sala .recorrido { height: 100vh; overflow: hidden; position: relative; z-index: 1; }
+.sala .pista { display: flex; height: 100vh; width: max-content; }
 
 .sala .escena {
   width: 100vw;
@@ -33,90 +44,120 @@
   align-items: center;
   text-align: center;
   padding: 6rem 2rem 3rem;
+  position: relative;
 }
 
-.sala .etiqueta {
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 0.9rem;
-  color: var(--acento);
+/* Año gigante de fondo en la escena del título */
+.escena--titulo::before {
+  content: attr(data-anio);
+  position: absolute;
+  font-family: var(--fuente-sala);
+  font-size: clamp(10rem, 40vw, 34rem);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--acento);
+  opacity: 0.16;
+  z-index: -1;
 }
+
+.sala .etiqueta { font-size: 1rem; letter-spacing: 3px; color: var(--acento); }
 
 .titulo-sala {
   font-family: var(--fuente-sala);
-  font-size: clamp(3.5rem, 13vw, 10rem);
-  line-height: 0.95;
+  font-weight: 700;
+  font-size: clamp(3.2rem, 12vw, 9rem);
+  line-height: 1;
   margin: 1rem 0;
   color: var(--acento);
 }
+.titulo-sala .letra { display: inline-block; }
+.titulo-sala--chico { font-size: clamp(2.4rem, 6vw, 4.5rem); }
 
-.titulo-sala--chico {
-  font-size: clamp(2.5rem, 7vw, 5rem);
-}
+.sala .subtitulo { font-style: italic; font-size: 1.35rem; max-width: 30ch; }
 
-.sala .subtitulo {
-  font-style: italic;
-  font-size: 1.3rem;
+.pegatina {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 96px; height: 96px;
+  border-radius: 50%;
+  background: var(--acento);
+  color: var(--fondo-solido);
+  font-family: var(--fuente-sala);
+  font-size: 0.95rem;
+  text-align: center;
+  line-height: 1.1;
+  padding: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  right: 14%; top: 24%;
 }
 
 .texto-sala {
   max-width: 520px;
-  padding: 2rem;
-  border: 2px solid var(--acento);
-  background: rgba(0, 0, 0, 0.35);
+  padding: 2rem 2.2rem;
+  border: var(--borde-texto);
+  background: var(--fondo-texto);
+  text-align: left;
 }
-
 .texto-sala h2 {
   font-family: var(--fuente-sala);
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: var(--acento);
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.1;
 }
-
-.texto-sala p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-
-.texto-sala a {
-  color: var(--acento);
-}
+.texto-sala p { font-size: 1.15rem; margin-bottom: 1rem; }
+.texto-sala a { color: var(--acento); }
 
 /* Cuadros con marco de museo */
 .cuadro {
-  background: #1a1208;
+  background: var(--marco-fondo);
   padding: 14px;
-  border: 8px solid var(--acento);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  border: var(--marco);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
   max-width: 90vw;
-  max-height: 80vh;
+  cursor: pointer;
 }
-
-.cuadro img {
-  display: block;
-  width: 100%;
-  object-fit: cover;
-  background: #2a2a2a;
-}
-
-.cuadro--vertical { width: min(320px, 80vw); }
-.cuadro--vertical img { aspect-ratio: 3 / 4; }
-
+.cuadro--vertical { width: min(320px, 78vw); }
+.cuadro--cuadrado { width: min(420px, 80vw); }
 .cuadro--horizontal { width: min(560px, 85vw); }
-.cuadro--horizontal img { aspect-ratio: 4 / 3; }
+
+.foto {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.18);
+}
+.foto::before {
+  content: "Tu foto aquí";
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  opacity: 0.55;
+  font-size: 0.9rem;
+}
+.cuadro--vertical .foto { aspect-ratio: 3 / 4; }
+.cuadro--cuadrado .foto { aspect-ratio: 1 / 1; }
+.cuadro--horizontal .foto { aspect-ratio: 4 / 3; }
+
+.foto img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s;
+}
+.cuadro:hover .foto img { transform: scale(1.07); }
 
 .cuadro figcaption {
   display: flex;
   flex-direction: column;
   padding-top: 0.8rem;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   text-align: left;
-  color: var(--texto);
+  color: var(--texto-cuadro);
 }
-
 .cuadro figcaption strong {
   font-family: var(--fuente-sala);
-  color: var(--acento);
+  color: var(--acento-cuadro);
   letter-spacing: 1px;
 }
 
@@ -124,60 +165,112 @@
 .puerta-sala {
   display: inline-block;
   margin: 1.5rem 0 1rem;
-  padding: 1rem 2rem;
+  padding: 1rem 2.2rem;
   border: 3px solid var(--acento);
   border-radius: 80px 80px 0 0;
   color: var(--texto);
   text-decoration: none;
   font-family: var(--fuente-sala);
-  letter-spacing: 2px;
-  transition: background 0.3s;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
 }
-
-.puerta-sala:hover {
-  background: var(--acento);
-  color: #000;
-}
-
-.enlace-volver {
-  color: var(--texto);
-  font-size: 0.9rem;
-}
+.puerta-sala:hover { background: var(--acento); color: var(--fondo-solido); transform: translateY(-8px); }
+.enlace-volver { color: var(--texto); font-size: 0.95rem; }
 
 .sala .pista-ayuda {
   position: fixed;
-  bottom: 1rem;
-  left: 50%;
+  bottom: 0.9rem; left: 50%;
   transform: translateX(-50%);
-  z-index: 20;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--texto);
+  z-index: 30;
+  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
+  border-radius: 99px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  white-space: nowrap;
 }
 
-/* ===== TEMA: HEAVENLY BODIES 2018 ===== */
-.sala--2018 {
-  --fondo: radial-gradient(circle at 50% 30%, #1d2a5c 0%, #0a0f26 70%);
-  --texto: #f3ead2;
-  --acento: #d4af37;
-  --fuente-sala: 'UnifrakturCook', 'Cinzel', serif;
+.sala .flash {
+  position: fixed; inset: 0;
+  background: #fff;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 80;
 }
-/* ===== TEMA: CAMP 2019 ===== */
+
+@media (max-width: 640px) {
+  .sala .pista-ayuda { font-size: 0.7rem; }
+  .pegatina { right: 6%; top: 18%; width: 78px; height: 78px; font-size: 0.8rem; }
+}
+
+/* ============ TEMA 2018: HEAVENLY BODIES (vitral dorado) ============ */
+.sala--2018 {
+  --fondo-solido: #0a0f26;
+  --fondo:
+    radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.18), transparent 35%),
+    radial-gradient(circle at 80% 70%, rgba(120, 60, 160, 0.3), transparent 40%),
+    radial-gradient(circle at 50% 30%, #1d2a5c 0%, #0a0f26 75%);
+  --texto: #f3ead2;
+  --acento: #e0be4a;
+  --fuente-sala: 'Cinzel', serif;
+  --fuente-texto: 'Cormorant Garamond', Georgia, serif;
+  --glifo: '✦';
+  --borde-texto: 2px solid var(--acento);
+  --fondo-texto: rgba(10, 15, 38, 0.6);
+  --marco-fondo: #1a1208;
+  --marco: 8px solid var(--acento);
+  --texto-cuadro: #f3ead2;
+  --acento-cuadro: var(--acento);
+}
+.sala--2018 .cuadro { border-radius: 160px 160px 6px 6px; padding-top: 22px; }
+.sala--2018 .cuadro .foto { border-radius: 140px 140px 0 0; }
+.sala--2018 .texto-sala { border-radius: 120px 120px 8px 8px; padding-top: 3rem; text-align: center; }
+.sala--2018 .texto-sala p { font-size: 1.3rem; }
+
+/* ============ TEMA 2019: CAMP (neón y exceso) ============ */
 .sala--2019 {
-  --fondo: linear-gradient(135deg, #2b0a3d 0%, #ff2e93 100%);
+  --fondo-solido: #2b0a3d;
+  --fondo: linear-gradient(135deg, #2b0a3d 0%, #7a1fa2 45%, #ff2e93 100%);
   --texto: #fff7fb;
   --acento: #fff200;
   --fuente-sala: 'Bungee', 'Impact', sans-serif;
+  --fuente-texto: 'Jost', sans-serif;
+  --glifo: '★';
+  --borde-texto: 4px dashed var(--acento);
+  --fondo-texto: rgba(43, 10, 61, 0.75);
+  --marco-fondo: #00e5ff;
+  --marco: 8px solid var(--acento);
+  --texto-cuadro: #12062b;
+  --acento-cuadro: #ff2e93;
 }
+.sala--2019 .cuadro { transform: rotate(-2deg); }
+.sala--2019 .escena:nth-child(even) .cuadro { transform: rotate(2.5deg); }
+.sala--2019 .titulo-sala { text-shadow: 5px 5px 0 #ff2e93, 10px 10px 0 #00e5ff; }
+.sala--2019 .pegatina { color: #12062b; background: #00e5ff; }
 
-.sala--2019 .cuadro {
-  background: #00e5ff;
-  transform: rotate(-2deg);
+/* ============ TEMA 2026: COSTUME ART (galería) ============ */
+.sala--2026 {
+  --fondo-solido: #f5f2ec;
+  --fondo:
+    linear-gradient(90deg, transparent 49.8%, rgba(0,0,0,0.05) 50%, transparent 50.2%) 0 0 / 33.33vw 100%,
+    #f5f2ec;
+  --texto: #151515;
+  --acento: #b3122b;
+  --fuente-sala: 'Bodoni Moda', 'Playfair Display', serif;
+  --fuente-texto: 'Jost', sans-serif;
+  --glifo: '◆';
+  --borde-texto: 2px solid #151515;
+  --fondo-texto: #ffffff;
+  --marco-fondo: #ffffff;
+  --marco: 12px solid #151515;
+  --texto-cuadro: #151515;
+  --acento-cuadro: #b3122b;
 }
-
-.sala--2019 .texto-sala {
-  background: rgba(43, 10, 61, 0.7);
-  border-style: dashed;
-  border-width: 4px;
-}
+.sala--2026 .menu { background: rgba(21, 21, 21, 0.92); }
+.sala--2026 .titulo-sala { font-style: italic; font-weight: 500; }
+.sala--2026 .adorno { opacity: 0.25; }
+.sala--2026 .cuadro { box-shadow: 0 30px 50px rgba(0, 0, 0, 0.25); }
+.sala--2026 .enlace-volver { color: #151515; }
+.sala--2026 .puerta-sala { color: #151515; border-color: #151515; }
+.sala--2026 .puerta-sala:hover { background: #151515; color: #fff; }
+.sala--2026 .pegatina { background: #b3122b; color: #fff; }
+.sala--2026 .escena--titulo::before { -webkit-text-stroke-color: #151515; opacity: 0.1; }
